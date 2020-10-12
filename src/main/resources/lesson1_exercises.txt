@@ -1,0 +1,14 @@
+1) Dla poniższych rodzajów metod napisz definicje przecięć (pointcut), które wybierają miejsca ich wywołań. Napisz aspekt, który dla tych przecięć wykonuje akcje wyświetlające rodzaj przechwyconej metody.
+a) metody zwracające liczbę typu float
+b) metody z jednym parametrem typu String
+c) metody z dwoma parametrami dowolnych typów
+d) metody publicznie w klasach *Service w pakiecie services
+e) metody set* w klasach z pakietu model, które nie są publiczne
+f) metody z adnotacją @Depreciated
+g) metody typu d, które nie są typu c  - wykorzystaj łączenie przecięć za pomocą operatorów logicznych
+
+2) Napisz aspekt wypisujący czas wykonania publicznych metod zdefiniowanych w aplikacji we wszystkich klasach w wybranym pakiecie (z wyjątkiem metod dostępowych get*/set*).
+
+3) Napisz aspekt dodający do klas z określonym typem możliwość sprawdzenia czasu ostatniego wywołania metody na danym obiekcie.
+
+4) Napisz aspekt zgłaszający błąd kompilacji dla klas z adnotacją @Immutable, które zawierają metody set*
