@@ -12,7 +12,7 @@ public aspect Aspect3 {
     }
 
     before(WhenUsedCheckable whenUsedCheckable):
-            execution(* WhenUsedCheckable+.changeName(..)) && this(whenUsedCheckable){
+            execution(* WhenUsedCheckable+.*(..)) && !execution(* WhenUsedCheckable+.used()) && this(whenUsedCheckable){
         whenUsedCheckable.used();
     }
 
