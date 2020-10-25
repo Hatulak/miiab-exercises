@@ -1,4 +1,4 @@
-package app;
+package app.lesson1;
 
 import app.lesson1.aspects.Aspect3;
 import app.lesson1.model.Animal;

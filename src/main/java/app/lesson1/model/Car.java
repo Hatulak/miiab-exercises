@@ -2,7 +2,7 @@ package app.lesson1.model;
 
 import jdk.nashorn.internal.ir.annotations.Immutable;
 
-@Immutable
+//@Immutable
 public class Car {
 
     private Long id;
