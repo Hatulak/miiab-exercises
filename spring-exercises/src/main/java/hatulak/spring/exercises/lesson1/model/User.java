@@ -1,11 +1,15 @@
 package hatulak.spring.exercises.lesson1.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
-    @Id
     private Long id;
     private String username;
     private String password;
