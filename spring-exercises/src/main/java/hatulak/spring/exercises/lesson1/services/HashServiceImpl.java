@@ -1,10 +1,12 @@
 package hatulak.spring.exercises.lesson1.services;
 
 import com.google.common.hash.Hashing;
+import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
 
-public class HashServiceImpl implements HashService{
+@Service
+public class HashServiceImpl implements HashService {
 
     @Override
     public String getHash(String s) {

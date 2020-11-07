@@ -5,7 +5,6 @@ import hatulak.spring.exercises.lesson1.repository.NoSuchUserException;
 import hatulak.spring.exercises.lesson1.repository.UserAlreadyExistsException;
 import org.springframework.stereotype.Service;
 
-@Service
 public interface UserService {
     User createUser(String username, String password, String name, String email) throws UserAlreadyExistsException;
     User findUser(String username);

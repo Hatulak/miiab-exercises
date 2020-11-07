@@ -1,12 +1,13 @@
 package hatulak.spring.exercises.lesson1.repository;
 
 import hatulak.spring.exercises.lesson1.model.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
+@Repository
 public class UserRepositoryImpl implements UserRepository {
 
     private List<User> userList = new LinkedList<>();
@@ -21,7 +22,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public List<User> findAll(User user) {
+    public List<User> findAll() {
         return userList;
     }
 
@@ -36,7 +37,7 @@ public class UserRepositoryImpl implements UserRepository {
     public void delete(Long id) {
         List<User> collect = userList.stream().filter(user -> user.getId().equals(id)).collect(Collectors.toList());
         if (collect.size() == 0) throw new NoSuchUserException();
-        userList.remove(userList.get(0));
+        userList.remove(collect.get(0));
     }
 
     @Override
