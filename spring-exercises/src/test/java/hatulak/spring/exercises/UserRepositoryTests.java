@@ -25,7 +25,7 @@ public class UserRepositoryTests {
     public void findByIdTest() {
         User user = userService.createUser("toFindById", "toFindById", "toFindById", "toFindById@toFindById.pl");
         Assertions.assertNotNull(userRepository.findById(user.getId()));
-        Assertions.assertNull(userRepository.findById(123L));
+        Assertions.assertFalse(userRepository.findById(123L).isPresent());
     }
 
     @Test
