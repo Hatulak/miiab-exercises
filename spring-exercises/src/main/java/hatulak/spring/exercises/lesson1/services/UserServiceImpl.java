@@ -85,4 +85,34 @@ public class UserServiceImpl implements UserService {
         if (byName == null) throw new NoSuchGroupException();
         return byName.getUserList();
     }
+
+    @Override
+    public List<User> getUsers() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public List<Group> getGroups() {
+        return groupRepository.findAll();
+    }
+
+    @Override
+    public Group findGroup(long id) {
+        return groupRepository.findById(id).get();
+    }
+
+    @Override
+    public Group updateGroup(Group group) {
+        return groupRepository.saveAndFlush(group);
+    }
+
+    @Override
+    public User findUserById(long id) {
+        return userRepository.findById(id).get();
+    }
+
+    @Override
+    public void updateUser(User user) {
+        userRepository.saveAndFlush(user);
+    }
 }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<h3><a href="/addUser">Add User</a></h3>
+<h3><a href="/createGroup">Create Group</a></h3>
+
+<h1>Users</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Group</th>
+        <th>Modify</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.userGroup?.name}"></td>
+        <td><a th:href="@{/editUser/{id}(id=${user.id})}">Modify</a></td>
+        <td><a th:href="@{/deleteUser/{id}(id=${user.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<h1>Groups</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Modify</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="group : ${groups}">
+        <td th:text="${group.name}"></td>
+        <td><a th:href="@{/editGroup/{id}(id=${group.id})}">Modify</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

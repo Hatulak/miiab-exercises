@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify Group</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/editGroup/{id}(id=${group.id})}" th:object="${group}" method="post">
+    <label>Name</label>
+    <input type="text" th:field="*{name}">
+    <input type="submit" value="Update Group">
+</form>
+
+</body>
+</html>

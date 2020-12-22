@@ -10,11 +10,30 @@ import java.util.List;
 
 public interface UserService {
     User createUser(String username, String password, String name, String email) throws UserAlreadyExistsException;
+
     User findUser(String username);
+
     void deleteUser(String username) throws NoSuchUserException;
+
     boolean verifyUser(String username, String password);
+
     Group createGroup(String groupName);
+
     void addUserToGroup(String username, String groupName) throws NoSuchUserException;
+
     void removeUserFromGroup(String username, String groupName) throws NoSuchUserException, NoSuchGroupException;
-    List<User> getUsersFromGroup(String groupName)throws NoSuchGroupException;
+
+    List<User> getUsersFromGroup(String groupName) throws NoSuchGroupException;
+
+    List<User> getUsers();
+
+    List<Group> getGroups();
+
+    Group findGroup(long id);
+
+    Group updateGroup(Group group);
+
+    User findUserById(long id);
+
+    void updateUser(User user);
 }
